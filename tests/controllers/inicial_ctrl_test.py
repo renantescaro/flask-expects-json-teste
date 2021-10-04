@@ -15,6 +15,17 @@ def test_requisicao_ok():
     assert retorno.status_code == 200
 
 
+def test_requisicao_erro_limite_caracter():
+    headers = {'content-type':'application/json'}
+    url     = 'http://localhost:5000/requisicao'
+    data    =  json.dumps({
+        'name'    : 'renan teste caracteres',
+        'email'   : 'renan@tescaro.com',
+        'password': '112233' })
+    retorno = requests.post(url=url, data=data, headers=headers)
+    assert retorno.status_code == 400
+
+
 # não passando todos os parametros obrigatórios
 def test_requisicao_erro():
     headers = {'content-type':'application/json'}
