@@ -1,13 +1,23 @@
 #### Teste API com Flask Expects Json
 <br>
 
-* Link: https://pypi.org/project/flask-expects-json/
+##### Link flask-expects-json:
+* https://pypi.org/project/flask-expects-json/
+<br>
 
+##### Dependencias
+* dotenv
+* Flask
+* flask-expects-json
+* pytest
+<br>
+
+##### Executar aplicação no:
 * Windows
 * > set FLASK_APP=flaskr
 * > set FLASK_ENV=development
 * > set FLASK_RUN_HOST=0.0.0.0
-* > set FLASK_RUN_PORT=88
+* > set FLASK_RUN_PORT=80
 * > flask run
 
 <br>
@@ -18,8 +28,8 @@
 * > export FLASK_RUN_HOST=0.0.0.0
 * > export FLASK_RUN_PORT=5000
 * > flask run
+<br>
 
-##### Dependencias
-* dotenv
-* Flask
-* flask-expects-json
+##### Executar teste unitário
+* no terminal / cmd: pytest
+<br>
