@@ -1,8 +1,6 @@
 import requests
 import json
 import sys
-sys.path.append('/home/renan/Área de Trabalho/flask/flask-expects-json-teste/')
-from flaskr.utils.debug import Debug
 
 
 # passando todos os parametros obrigatórios
@@ -23,6 +21,30 @@ def test_requisicao_erro():
     url     = 'http://localhost:5000/requisicao'
     data    =  json.dumps({
         'name'    : 'renan',
+        'password': '112233' })
+    retorno = requests.post(url=url, data=data, headers=headers)
+    assert retorno.status_code == 400
+
+
+# teste com type number
+def test_requisicao_com_numero_ok():
+    headers = {'content-type':'application/json'}
+    url     = 'http://localhost:5000/requisicao'
+    data    =  json.dumps({
+        'idade'   : 1,
+        'email'   : 'renan@tescaro.com',
+        'password': '112233' })
+    retorno = requests.post(url=url, data=data, headers=headers)
+    assert retorno.status_code == 200
+
+
+# teste com type number, passando string
+def test_requisicao_com_numero_erro():
+    headers = {'content-type':'application/json'}
+    url     = 'http://localhost:5000/requisicao'
+    data    =  json.dumps({
+        'idade'   : '1',
+        'email'   : 'renan@tescaro.com',
         'password': '112233' })
     retorno = requests.post(url=url, data=data, headers=headers)
     assert retorno.status_code == 400
