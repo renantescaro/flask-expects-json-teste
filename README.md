@@ -5,6 +5,10 @@
 * https://pypi.org/project/flask-expects-json/
 <br>
 
+##### Link jsonschema:
+* https://python-jsonschema.readthedocs.io/en/latest/
+<br>
+
 ##### Dependencias
 * dotenv
 * Flask
