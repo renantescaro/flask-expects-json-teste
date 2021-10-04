@@ -20,8 +20,9 @@ class InicialCtrl:
     schema = {
         'type': 'object',
         'properties': {
-            'name': {'type': 'string'},
-            'email': {'type': 'string'},
+            'name'    : {'type': 'string'},
+            'idade'   : {'type': 'number'},
+            'email'   : {'type': 'string'},
             'password': {'type': 'string'}
         },
         'required': ['email', 'password']
