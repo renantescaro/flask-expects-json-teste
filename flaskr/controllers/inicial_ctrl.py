@@ -20,7 +20,7 @@ class InicialCtrl:
     schema = {
         'type': 'object',
         'properties': {
-            'name'    : {'type': 'string'},
+            'name'    : {'type': 'string', 'maxLength': 20},
             'idade'   : {'type': 'number'},
             'email'   : {'type': 'string'},
             'password': {'type': 'string'}
